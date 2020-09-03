@@ -9,7 +9,7 @@
     <body>
 <div class="container">
 
-<div align="center" style="width: 700px;">
+<div  style="width: 700px;">
   <h1><a href="/" style="color: #FF83FA;"><b>KALOKALKULATOR</b></a></h1>
   </div>
 
