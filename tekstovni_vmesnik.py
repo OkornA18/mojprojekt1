@@ -1,6 +1,6 @@
 from model import Kalorije
 
-print('Izračunajmo predvideno oceno tvojega dnevnega vnosa kalorij..')
+print('Izračunajmo predvideno oceno tvojega dnevnega vnosa kalorij.')
 
 # vpiši starost
 starost = int(input("Vpiši svojo starost: "))
@@ -31,7 +31,7 @@ while True:
     try:
         visina = float(input("Vpiši svojo višino v cm: "))
         # Vpiši visino v cm
-        if not visina > 80:
+        if not visina > 2:
             raise AssertionError('Višina mora biti v centimetrih, npr. 167, 179..')
         break
     except AssertionError as e:

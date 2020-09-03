@@ -3,7 +3,7 @@
 <div align="center"style="width: 500px;" class="dom">
 <h4>
 <p>
-Zdravo! Bi rad izračunal število kalorij, ki jih moraš zaužiti, da ohranjanje, pridobivanje in izgubljanje telesne teže?
+Zdravo! Bi rad izračunal število kalorij, ki jih moraš zaužiti, za ohranjanje, pridobivanje in izgubljanje telesne teže?
 </p>
 <p>
 Potem klikni gumb izračunaj svoje kalorije in vpiši svoje podatke.
