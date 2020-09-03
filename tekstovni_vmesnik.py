@@ -71,7 +71,8 @@ elif cilj == 'I':
 elif cilj == 'P':
     dnevne_kalorije = kalorije.pridobitev(act_mult = aktivnost)
     
-    
+print('''Če je to tvoj cilj, potem moraš na dan zaužiti {} kalorij'''.format(dnevne_kalorije))
+
 protein = kalorije.proteinski_vnos(teza)
 
 
