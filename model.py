@@ -14,7 +14,6 @@ class Kalorije():
             bmr = ((10*self.teza) + (6.25*self.visina) - (5*self.starost) + 5)
         else:   
             bmr = ((10*self.teza) + (6.25*self.visina) - (5*self.starost) - 161)
-            #bmr = 370 + 21.6*self.LBM()
         return bmr
      
     def vzdrzevanje(self, act_mult = 1.4):        

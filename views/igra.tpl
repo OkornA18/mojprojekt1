@@ -1,11 +1,8 @@
 % import model
 % rebase('views/base.tpl')
 
-
-  <h1>Kalkulator kalorij</h1>
-
   <blockquote>
-    Izračunajmo predvideno oceno tvojega dnevnega vnosa kalorij.
+  Izračunajmo predvideno oceno tvojega dnevnega vnosa kalorij.
   </blockquote>
   <p>Vpišite podatke in izračunajte, koliko energije porabite dnevno za vzdrževanje svoje telesne teže pri svojih navadah oz. fizičnih aktivnostih.</p>
   <div style="background-color: #ffffcc; padding: 20px;">
