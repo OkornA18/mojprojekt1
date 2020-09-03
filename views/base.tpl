@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <title>Kalokalkulator</title>
-   <meta charset="UTF-8">
-   <!--Tukaj vključimo css stvari-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title align="center">KALOKALKULATOR</title>
+ 
 </head>
+    <body>
+<div class="container">
 
-<body>
+<div align="center" style="width: 700px;">
+  <h1><a href="/" style="color: #FF83FA;"><b>KALOKALKULATOR</b></a></h1>
+  </div>
 
-   <!--Tukaj pride vsebina-->
-   <div class="container"> 
-      {{!base}}
-   </div>
 
- <!--Tukaj dodamo še javascript-->
-</body>
+</div>
+
+
+    {{ !base }}
+    </body>
 
 </html>

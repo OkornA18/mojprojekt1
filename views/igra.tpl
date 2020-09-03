@@ -21,9 +21,6 @@
   <h4>Vaša aktivnost</h4> 
   <label for="a1"><input id="a1" name="aktivnost" type="radio" value="1.2" />Brez aktivnosti</label><br> <label for="a2"><input id="a2" name="aktivnost" type="radio" value="1.375" />Zelo malo aktivnosti (1-3 dni na teden)</label><br> <label for="a3"><input id="a3" name="aktivnost" type="radio" value="1.55" />Zmerna aktivnost (3-5 dni na teden)</label><br> <label for="a4"><input id="a4" name="aktivnost" type="radio" value="1.725" />Visoka stopnja aktivnosti (6-7 dni na teden)</label><br> <label for="a5"><input id="a5" name="aktivnost" type="radio" value="1.9" />Zelo visoka stopnja aktivnosti (2× na dan, zelo težki treningi)</label><p><input type="button" value="Izračunaj" 
 
-   % end
-   
-  <img src="img/10.jpg" alt="obesanje">
 
   <form action="/igra/" method="post">
     <button type="submit">Nov izračun</button>
