@@ -1,4 +1,4 @@
-import model
+from model import Kalorije
 
 print('Izračunajmo predvideno oceno tvojega dnevnega vnosa kalorij..')
 
@@ -37,7 +37,7 @@ while True:
     except AssertionError as e:
         print(e)            
 
-#C = Kalorije(teza, visina, starost, spol)
+kalorije = Kalorije(teza, visina, starost, spol)
 
 aktivnost = float(input('''
 1.2 - Brez aktivnosti
