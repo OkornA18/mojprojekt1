@@ -1,12 +1,15 @@
 % import model
 % rebase('views/base.tpl')
 
-  <blockquote>
+  <p>
   Izračunajmo predvideno oceno tvojega dnevnega vnosa kalorij.
-  </blockquote>
-  <p>Vpišite podatke in izračunajte, koliko energije porabite dnevno za vzdrževanje svoje telesne teže pri svojih navadah oz. fizičnih aktivnostih.</p>
+  </p>
+
+  <p>
+  Vpišite svoje podatke in izračunajte, koliko energije potrebujete dnevno za vzdrževanje, pridobitev ali izgubo svoje telesne teže pri svojih navadah oz. fizičnih aktivnostih.</p>
   <div style="background-color: #ffffcc; padding: 20px;">
   <form method="post" name="test">
+  
   <h4>Vaša starost</h4> 
   <input style="width: 50px; display: inline-block;" name="starost" size="3" type="text" /> let
   <h4>Vaša višina</h4> 
