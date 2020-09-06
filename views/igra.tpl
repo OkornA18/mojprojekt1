@@ -17,17 +17,39 @@
     <p><tr><td>Vaša višina v centimetrih: <input type='text' name='visina' pattern="[0-9]{2,}" title="Napaka"> (npr: 175) </td></tr>
 
     <p><tr><td>Vaša masa v kilogramih: <input type='text' name='masa' pattern="[0-9]{2,}" title="Napaka"> (npr: 50) </td></tr>
-  </form>
+
   <h4>Spol</h4>
-  <label for="s1"><input id="s1" name="spol" type="radio" value="Z" />ženska</label><br> <label for="s2"><input id="s2" name="spol" type="radio" value="M" />moški</label>
-  <h4>Vaša aktivnost</h4> 
-  <label for="a1"><input id="a1" name="aktivnost" type="radio" value="1.2" />Brez aktivnosti</label><br> <label for="a2"><input id="a2" name="aktivnost" type="radio" value="1.375" />Zelo malo aktivnosti (1-3 dni na teden)</label><br> <label for="a3"><input id="a3" name="aktivnost" type="radio" value="1.55" />Zmerna aktivnost (3-5 dni na teden)</label><br> <label for="a4"><input id="a4" name="aktivnost" type="radio" value="1.725" />Visoka stopnja aktivnosti (6-7 dni na teden)</label><br> <label for="a5"><input id="a5" name="aktivnost" type="radio" value="1.9" />Zelo visoka stopnja aktivnosti (2× na dan, zelo težki treningi)</label><p><input type="button" value="Izračunaj" 
+    <label for="s1">
+      <input id="s1" name="spol" type="radio" value="Z" required />ženska
+    </label><br> 
+    <label for="s2">
+      <input id="s2" name="spol" type="radio" value="M" />moški
+    </label>
 
+    <h4>Vaša aktivnost - izberite možnost, ki najbolje opisuje vašo športno aktivnost v enem povprečnem tednu.</h4> 
+    <label for="a1">
+      <input id="a1" name="aktivnost" type="radio" value="1.2" required />Brez aktivnosti
+    </label><br> 
 
-  <form action="/igra/" method="post">
-    <button type="submit">Nov izračun</button>
+    <label for="a2">
+      <input id="a2" name="aktivnost" type="radio" value="1.375" />Zelo malo aktivnosti (1-3 dni na teden)
+    </label><br> 
+
+    <label for="a3">
+      <input id="a3" name="aktivnost" type="radio" value="1.55" />Zmerna aktivnost (3-5 dni na teden)
+    </label><br> 
+
+    <label for="a4">
+      <input id="a4" name="aktivnost" type="radio" value="1.725" />Visoka stopnja aktivnosti (6-7 dni na teden)
+    </label><br>
+
+    <label for="a5">
+      <input id="a5" name="aktivnost" type="radio" value="1.9" />Zelo visoka stopnja aktivnosti (2× na dan, zelo težki treningi)
+    </label>
+
+    <p><button type="submit">Izračunaj</button>
   </form>
-
+  
 <h2> Rezultati </h2>
   <h4> Vrednost vašega bazalnega metabolizma (BMR): {{kalorije.bmr()}} </h4>
 
