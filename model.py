@@ -18,7 +18,7 @@ class Kalorije():
                 bmr = ((10 * int(self.teza)) + (6.25 * int(self.visina)) - (5 * int(self.starost)) + 5)
             else:   
                 bmr = ((10 * int(self.teza)) + (6.25 * int(self.visina)) - (5 * int(self.starost)) - 161)
-            return bmr
+            return round(bmr)
      
     def vzdrzevanje(self):        
         '''Izračun potrebnih kalorij za vzdrževanje telesne teže'''
