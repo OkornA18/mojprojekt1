@@ -1,4 +1,4 @@
-# mojprojekt1
+# KALOKALKULATOR
 Projekt pri predmetu Uvod v programiranje na Fakulteti za matematiko in fiziko. Projekt na podlagi spola, višine, teže in aktivnosti izračuna število kalorij za ohranjanje, pridobivanje in izgubljanje telesne teže.
 
 ## Navodila za zagon programa
