@@ -1,6 +1,6 @@
 % rebase("views/base.tpl")
 
-<div align="center"style="width: 500px;" class="dom">
+<div align="center" style="width: 800px;" class="dom">
 <h4>
 <p>
 Zdravo! Bi rad izračunal število kalorij, ki jih moraš zaužiti, za ohranjanje, pridobivanje in izgubljanje telesne teže?
