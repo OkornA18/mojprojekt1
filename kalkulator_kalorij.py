@@ -1,5 +1,7 @@
 import bottle
-from model import Kalorije
+import model
+
+kalorije = model.Kalorije()
 
 @bottle.get("/") 
 def osnovna_stran():
@@ -7,7 +9,17 @@ def osnovna_stran():
 
 @bottle.post('/igra/')
 def pokazi_igro():
-    
     return bottle.template('views/igra.tpl')
+
+@bottle.post('/igra/')
+def preberi():
+        
+    starost = bottle.request.forms.get('starost')
+    visina = bottle.request.forms.get('visina')
+    masa = bottle.request.forms.get('masa')
+    spol = bottle.request.forms.get('spol')
+    aktivnost = bottle.request.forms.get('aktivnost')
+
+    return bottle.template('views/igra.tpl', kalorije=kalorije)
 
 bottle.run(reloader=True, debug=True)
