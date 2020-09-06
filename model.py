@@ -1,36 +1,36 @@
 class Kalorije():
-    
-    def __init__(self, teza, visina, starost, spol):
+
+    def __init__(self, teza=0, visina=0, starost=0, spol="", aktivnost=0):
         self.teza = teza
         self.visina = visina
         self.starost = starost
         self.spol = spol
+        self.aktivnost = aktivnost   
     
-    def bmr(self, spol):        
+    def bmr(self):        
         '''Izračun "basal metabolic rate"'''
-        
         #Harris–Benedictova enačba
-        if spol == "M":
-            bmr = ((10*self.teza) + (6.25*self.visina) - (5*self.starost) + 5)
-        else:   
-            bmr = ((10*self.teza) + (6.25*self.visina) - (5*self.starost) - 161)
-        return bmr
+
+        if self.visina is None and self.teza is None and self.starost is None:
+            return 0
+        else:
+            if self.spol == "M":
+                bmr = ((10 * int(self.teza)) + (6.25 * int(self.visina)) - (5 * int(self.starost)) + 5)
+            else:   
+                bmr = ((10 * int(self.teza)) + (6.25 * int(self.visina)) - (5 * int(self.starost)) - 161)
+            return bmr
      
-    def vzdrzevanje(self, act_mult = 1.4):        
+    def vzdrzevanje(self):        
         '''Izračun potrebnih kalorij za vzdrževanje telesne teže'''
-        
-        return round(self.bmr(self.spol)*act_mult)
+        if self.aktivnost is None:
+            return 0
+        else:
+            return round(self.bmr() * float(self.aktivnost))
     
-    def pridobitev(self, percentage = 0.2, act_mult = 1.4):        
+    def pridobitev(self):        
         '''Izračun potrebnih kalorij za pridobitev telesne teže''' 
-        
-        return round(self.vzdrzevanje(act_mult = act_mult)*(1+percentage))
+        return round(self.vzdrzevanje() * (1 + 0.2))
     
-    def izguba(self, percentage = 0.2, act_mult = 1.4):        
+    def izguba(self):        
         '''Izračun potrebnih kalorij za izgubo telesne teže'''
-        
-        return round(self.vzdrzevanje(act_mult = act_mult)*(1-percentage))
-    
-    def proteinski_vnos(self, teza, mult = 2.2):       
-        
-        return round(self.teza*mult)
+        return round(self.vzdrzevanje() * (1 - 0.2))
