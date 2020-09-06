@@ -20,6 +20,12 @@ def preberi():
     spol = bottle.request.forms.get('spol')
     aktivnost = bottle.request.forms.get('aktivnost')
 
-    return bottle.template('views/igra.tpl', kalorije=kalorije)
+    kalorije.teza = masa
+    kalorije.visina = visina
+    kalorije.starost = starost
+    kalorije.spol = spol
+    kalorije.aktivnost = aktivnost
 
+    return bottle.template('views/igra.tpl', kalorije=kalorije)
+    
 bottle.run(reloader=True, debug=True)
