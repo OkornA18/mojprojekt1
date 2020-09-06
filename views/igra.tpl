@@ -9,13 +9,15 @@
   Vpišite svoje podatke in izračunajte, koliko energije potrebujete dnevno za vzdrževanje, pridobitev ali izgubo svoje telesne teže pri svojih navadah oz. fizičnih aktivnostih.</p>
   <div style="background-color: #ffffcc; padding: 20px;">
   <form method="post" name="test">
-  
-  <h4>Vaša starost</h4> 
-  <input style="width: 50px; display: inline-block;" name="starost" size="3" type="text" /> let
-  <h4>Vaša višina</h4> 
-  <input style="width: 50px; display: inline-block;" name="visina" size="3" type="text" /> cm
-  <h4>Vaša masa</h4> 
-  <input style="width: 50px; display: inline-block;" name="teza" size="3" type="text" /> kg
+
+  <p>
+  <form action="/igra/" method="post">
+    <p><tr><td>Vaša starost v letih: <input type='text' name='starost' pattern="[0-9]{1,}" title="Napaka"> (npr: 17) </td></tr>
+
+    <p><tr><td>Vaša višina v centimetrih: <input type='text' name='visina' pattern="[0-9]{2,}" title="Napaka"> (npr: 175) </td></tr>
+
+    <p><tr><td>Vaša masa v kilogramih: <input type='text' name='masa' pattern="[0-9]{2,}" title="Napaka"> (npr: 50) </td></tr>
+  </form>
   <h4>Spol</h4>
   <label for="s1"><input id="s1" name="spol" type="radio" value="Z" />ženska</label><br> <label for="s2"><input id="s2" name="spol" type="radio" value="M" />moški</label>
   <h4>Vaša aktivnost</h4> 
