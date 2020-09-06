@@ -6,7 +6,7 @@ class Kalorije():
         self.starost = starost
         self.spol = spol
     
-    def BMR(self, spol):        
+    def bmr(self, spol):        
         '''Izračun "basal metabolic rate"'''
         
         #Harris–Benedictova enačba
@@ -19,7 +19,7 @@ class Kalorije():
     def vzdrzevanje(self, act_mult = 1.4):        
         '''Izračun potrebnih kalorij za vzdrževanje telesne teže'''
         
-        return round(self.BMR(self.spol)*act_mult)
+        return round(self.bmr(self.spol)*act_mult)
     
     def pridobitev(self, percentage = 0.2, act_mult = 1.4):        
         '''Izračun potrebnih kalorij za pridobitev telesne teže''' 
