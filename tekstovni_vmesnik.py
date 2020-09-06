@@ -2,78 +2,46 @@ from model import Kalorije
 
 print('Izračunajmo predvideno oceno tvojega dnevnega vnosa kalorij.')
 
-# vpiši starost
-starost = int(input("Vpiši svojo starost: "))
 
-# vpiši Z ali M za spol
-while True:
-    try:
-        spol = str(input("Vpiši svoj spol (M za moški in Z za ženski): "))  
-        if spol not in ['M','Z']:
-            raise AssertionError('Prosim, vpišite črko M ali Z')
-        break
-    except AssertionError as e:
-        print(e)
-        
-# vpiši težo v kg
-while True:
-    try:
-        teza = float(input("Vpiši svojo težo v kg: "))
-        # asserting teza is in Kg
-        if not teza < 180:
-            raise AssertionError('Teža mora biti v kilogramih, npr. 61, 84..')
-        break
-    except AssertionError as e:
-        print(e)    
-        
-# Vpiši višina v cm
-while True:
-    try:
-        visina = float(input("Vpiši svojo višino v cm: "))
-        # Vpiši visino v cm
-        if not visina > 2:
-            raise AssertionError('Višina mora biti v centimetrih, npr. 167, 179..')
-        break
-    except AssertionError as e:
-        print(e)            
+def uporabnik():
+    starost = int(input('Vpišite svojo starost: '))
+    spol = input('Vpišite svoj spol(moški, ženski): ')
+    teza = int(input('Vpišite svojo težo v kilogramih: '))
+    visina = int(input('Vpišite svojo višino v centimetrih: '))
 
-kalorije = Kalorije(teza, visina, starost, spol)
+    if spol == "moški":
+        bmr = ((10*teza) + (6.25*visina) - (5*starost) + 5)b
+    else:   
+        bmr = ((10*teza) + (6.25*visina) - (5*starost) - 161)
+    return bmr
 
-aktivnost = float(input('''
-1.2 - Brez aktivnosti
-1.3 - Zelo malo aktivnosti (1-3 dni na teden)
-1.5 - Zmerna aktivnost (3-5 dni na teden)
-1.7 - Visoka stopnja aktivnosti (6-7 dni na teden)
-1.9 - Zelo visoka stopnja aktivnosti (2× na dan, zelo težki treningi) 
+def aktivnost(bmr): 
+    aktivnostna_stopnja = input('Brez aktivnosti, Zelo malo aktivnosti (1-3 dni na teden),Zmerna aktivnost (3-5 dni na teden), Visoka stopnja aktivnosti (6-7 dni na teden), Zelo visoka stopnja aktivnosti (2× na dan, zelo težki treningi)? :  ')
 
-Vpiši multiplikator pred stopnjo aktivnosti, ki velja zate (števila med 1.2 in 1.9): '''))
+    if aktivnostna_stopnja == 'Brez aktivnosti':
+        aktivnostna_stopnja = 1.2 * bmr
+    elif aktivnostna_stopnja == 'Zelo malo aktivnosti (1-3 dni na teden)':
+        aktivnostna_stopnja = 1.3 * bmr
+    elif aktivnostna_stopnja == 'Zmerna aktivnost (3-5 dni na teden)':
+        aktivnostna_stopnja = 1.5 * bmr
+    elif aktivnostna_stopnja == 'Visoka stopnja aktivnosti (6-7 dni na teden)':
+        aktivnostna_stopnja = 1.7 * bmr
+    elif aktivnostna_stopnja == 'Zelo visoka stopnja aktivnosti (2× na dan, zelo težki treningi)':
+        aktivnostna_stopnja = 1.9 * bmr
 
-print('''Tvoj dnevni vnos kalorij:
-{} za vzdrževanje telesne teže
-{} za izgubo telesne teže
-{} za pridobitev telesne teže'''.format(kalorije.vzdrzevanje(act_mult = aktivnost), kalorije.izguba(act_mult = aktivnost), kalorije.pridobitev(act_mult = aktivnost)))
+    return(int(aktivnostna_stopnja))
+
+def izgubitev_pridobitev(aktivnostna_stopnja):
+    cilj = input('Želite vzdrževati, pridobiti ali izgubiti telesno težo: ')
+    kalorije = Kalorije(teza, visina, starost, spol)
+    if cilj == 'izgubiti':
+        koncne_kalorije = kalorije.izguba(aktivnostna_stopnja)
+    elif cilj == 'vzdrževati':
+        koncne_kalorije = kalorije.vzdrzevanje(aktivnostna_stopnja)
+    elif cilj == 'pridobiti':
+        koncne_kalorije = kalorije.pridobitev(aktivnostna_stopnja)
+
+    print('Če je vaš cilj ', cilj, 'telesno težo, morate na dan zaužiti', int(koncne_kalorije), 'kalorij!')
 
 
-# vpiši svoj cilj
-while True:
-    try:
-        cilj = str(input("Kaj je tvoj cilj? Vpiši V za vzdrževanje, I za izgubo ali P za pridobitev: "))  
-        if cilj not in ['V','I','P']:
-            raise AssertionError('Prosim, vpiši črko V,I ali P')
-        break
-    except AssertionError as e:
-        print(e)
-        
-if cilj == 'V':
-    dnevne_kalorije = kalorije.vzdrzevanje(act_mult = aktivnost)
-elif cilj == 'I':
-    dnevne_kalorije = kalorije.izguba(act_mult = aktivnost)
-elif cilj == 'P':
-    dnevne_kalorije = kalorije.pridobitev(act_mult = aktivnost)
-    
-print('''Če je to tvoj cilj, potem moraš na dan zaužiti {} kalorij'''.format(dnevne_kalorije))
-
-protein = kalorije.proteinski_vnos(teza)
-
-
-print('''Tvoj dnevni minimalni proteinski vnos: {} gramov'''.format(protein))
+izgubitev_pridobitev(aktivnost(uporabnik()))
