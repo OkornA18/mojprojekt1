@@ -10,7 +10,7 @@ def uporabnik():
     visina = int(input('Vpišite svojo višino v centimetrih: '))
 
     if spol == "moški":
-        bmr = ((10*teza) + (6.25*visina) - (5*starost) + 5)b
+        bmr = ((10*teza) + (6.25*visina) - (5*starost) + 5)
     else:   
         bmr = ((10*teza) + (6.25*visina) - (5*starost) - 161)
     return bmr
