@@ -22,3 +22,28 @@
   <form action="/igra/" method="post">
     <button type="submit">Nov izračun</button>
   </form>
+
+<h2> Rezultati </h2>
+  <h4> Vrednost vašega bazalnega metabolizma (BMR): {{kalorije.bmr()}} </h4>
+
+  <h4> Spodaj je tabela, ki prikazuje, koliko kalorij na dan bi morali zaužiti, da bi se vaša telesa masa ohranila ali pa spremenila po vaših željah. </h4>
+
+  
+  <table style="width:30%">
+    <tr>
+      <th> ŽELJA </th>
+      <th> KALORIJE/DAN </th>
+    </tr>
+    <tr>
+      <th> vzdrževati telesno težo </th>
+      <th> {{kalorije.vzdrzevanje()}} </th>
+    </tr> 
+    <tr>
+      <th> pridobiti telesno težo </th>
+      <th> {{kalorije.pridobitev()}} </th>
+    </tr> 
+    <tr>
+      <th> izgubiti telesno težos </th>
+      <th> {{kalorije.izguba()}} </th>
+    </tr> 
+  </table>
