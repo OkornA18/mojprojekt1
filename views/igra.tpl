@@ -46,10 +46,10 @@
     <label for="a5">
       <input id="a5" name="aktivnost" type="radio" value="1.9" />Zelo visoka stopnja aktivnosti (2× na dan, zelo težki treningi)
     </label>
-
+    
     <p><button type="submit">Izračunaj</button>
   </form>
-  
+
 <h2> Rezultati </h2>
   <h4> Vrednost vašega bazalnega metabolizma (BMR): {{kalorije.bmr()}} </h4>
 
