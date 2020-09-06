@@ -7,7 +7,7 @@
 
   <p>
   Vpišite svoje podatke in izračunajte, koliko energije potrebujete dnevno za vzdrževanje, pridobitev ali izgubo svoje telesne teže pri svojih navadah oz. fizičnih aktivnostih.</p>
-  <div style="background-color: #ffffcc; padding: 20px;">
+  <div style="background-color: #ffffe5; padding: 20px;">
   <form method="post" name="test">
 
   <p>
