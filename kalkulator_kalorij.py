@@ -5,4 +5,9 @@ from model import Kalorije
 def osnovna_stran():
     return bottle.template("views/osnovna_stran.tpl")
 
+@bottle.post('/igra/')
+def pokazi_igro():
+    
+    return bottle.template('views/igra.tpl')
+
 bottle.run(reloader=True, debug=True)
