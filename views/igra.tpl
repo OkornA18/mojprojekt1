@@ -70,7 +70,7 @@
       <th> {{kalorije.pridobitev()}} </th>
     </tr> 
     <tr>
-      <th> izgubiti telesno težos </th>
+      <th> izgubiti telesno težo </th>
       <th> {{kalorije.izguba()}} </th>
     </tr> 
   </table>
